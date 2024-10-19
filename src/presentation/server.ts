@@ -30,6 +30,7 @@ export class Server {
     });
 
     //Routes
+    this.app.use("/api/v1", this.routes);
 
     //Cors
 
