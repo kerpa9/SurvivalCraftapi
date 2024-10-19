@@ -1,6 +1,18 @@
 import { DataSource } from "typeorm";
-import { Players } from "./Models/PlayerModel";
-import { Users } from "./Models/UsersModel";
+import {
+  ClanMembers,
+  Clans,
+  Construction,
+  Inventary,
+  InventoryItem,
+  InventoryResource,
+  Items,
+  Players,
+  Quest,
+  QuestPlayer,
+  Resource,
+  Users,
+} from "../index";
 
 interface Options {
   host: string;
@@ -22,7 +34,20 @@ export class PostgresDatabaseConfig {
       database: options.database,
 
       //Entities
-      entities: [Players, Users],
+      entities: [
+        ClanMembers,
+        Clans,
+        Construction,
+        Inventary,
+        InventoryItem,
+        InventoryResource,
+        Items,
+        Players,
+        QuestPlayer,
+        Quest,
+        Resource,
+        Users,
+      ],
       synchronize: true,
 
       ssl: {
