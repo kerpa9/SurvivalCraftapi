@@ -1,4 +1,4 @@
-import { Players } from "../../Data/Postgres/Models/Player";
+import { Players } from "../../Data/Postgres/Models/PlayerModel";
 import { CreatePlayerDTO } from "../../Domain/DTOS/player/createPlayerDTO";
 import { CatchError } from "../../Domain/Errors/CatchError";
 

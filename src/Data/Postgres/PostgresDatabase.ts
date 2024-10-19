@@ -1,5 +1,6 @@
 import { DataSource } from "typeorm";
-import { Players } from "./Models/Player";
+import { Players } from "./Models/PlayerModel";
+import { Users } from "./Models/UsersModel";
 
 interface Options {
   host: string;
@@ -21,7 +22,7 @@ export class PostgresDatabaseConfig {
       database: options.database,
 
       //Entities
-      entities: [Players],
+      entities: [Players, Users],
       synchronize: true,
 
       ssl: {
