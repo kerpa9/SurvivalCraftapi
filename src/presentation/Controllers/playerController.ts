@@ -15,12 +15,16 @@ export class PlayerController {
   };
 
   createPlayer = (req: Request, res: Response) => {
+    const userIdSesion = 3;
+    console.log(req.body);
     const [error, createPlayerDTO] = CreatePlayerDTO.createPlayer(req.body);
 
     if (error) return res.status(422).json({ message: error });
 
+    console.log(createPlayerDTO);
+
     this.playerService
-      .createPlayer(createPlayerDTO!)
+      .createPlayer(createPlayerDTO!, userIdSesion)
       .then((player) => res.status(200).json(player))
       .catch((err: any) => this.handleError(err, res));
   };
